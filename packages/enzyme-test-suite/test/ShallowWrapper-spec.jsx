@@ -39,12 +39,13 @@ import describeMethods from './_helpers/describeMethods';
 import describeHooks from './_helpers/describeHooks';
 import {
   REACT16,
+  REACT17,
   is,
 } from './_helpers/version';
 
 // The shallow renderer in react 16 does not yet support batched updates. When it does,
 // we should be able to go un-skip all of the tests that are skipped with this flag.
-const BATCHING = !REACT16;
+const BATCHING = !REACT16 && !REACT17;
 
 describe('shallow', () => {
   describe('top level entry points', () => {
